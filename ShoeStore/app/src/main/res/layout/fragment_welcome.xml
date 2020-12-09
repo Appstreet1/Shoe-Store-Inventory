@@ -10,6 +10,9 @@
             type="de.myprojects.shoestore.welcome.WelcomeFragment" />
     </data>
 
+    <!--    I used ConstraintLayout here,
+         so I can move the views anywhere I like and since I have less than 15 elements in here -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

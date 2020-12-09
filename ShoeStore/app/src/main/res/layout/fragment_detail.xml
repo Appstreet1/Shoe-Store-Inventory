@@ -14,11 +14,16 @@
             type="de.myprojects.shoestore.models.Shoe" />
     </data>
 
+<!--    I used ConstraintLayout here, so I can move it easily anywhere I like and since I have only one layout element in here -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detail_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".detail.DetailFragment">
+
+        <!-- inside the constraintLayout I used LinearLayout,because I wanted the views to be properly arranged
+             with same margin, padding and size-->
 
         <LinearLayout
             android:layout_width="0dp"
