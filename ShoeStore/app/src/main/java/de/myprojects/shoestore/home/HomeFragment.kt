@@ -2,6 +2,9 @@ package de.myprojects.shoestore.home
 
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.view.marginTop
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -9,8 +12,6 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import de.myprojects.shoestore.MainViewModel
 import de.myprojects.shoestore.R
 import de.myprojects.shoestore.databinding.FragmentHomeBinding
@@ -33,6 +34,8 @@ class HomeFragment : Fragment() {
 
         setHasOptionsMenu(true)
         observeShoes()
+        addEntry()
+        addEntry()
 
         return binding.root
     }
@@ -47,16 +50,32 @@ class HomeFragment : Fragment() {
     private fun initRecyclerView() {
         listAdapter = ShoeListAdapter()
 
-        recyclerView.apply {
-            layoutManager = LinearLayoutManager(this.context)
-            itemAnimator = DefaultItemAnimator()
-            adapter = listAdapter
+//        recyclerView.apply {
+//            layoutManager = LinearLayoutManager(this.context)
+//            itemAnimator = DefaultItemAnimator()
+//            adapter = listAdapter
+//        }
+    }
+
+    private fun addEntry(){
+        val myLayout: LinearLayout = binding.linearLayout
+
+      val textView = TextView(this.context)
+        textView.text = ("Hi")
+        textView.layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        ).apply {
+            setMargins(0,20,0,0)
         }
+
+        myLayout.addView(textView)
     }
 
     private fun observeShoes() {
         viewModel.shoes.observe(viewLifecycleOwner, Observer { shoes ->
-            listAdapter.setData(shoes)
+//            listAdapter.setData(shoes)
+            addEntry()
         })
     }
 

@@ -10,6 +10,8 @@
             type="de.myprojects.shoestore.home.HomeFragment" />
     </data>
 
+    <!--    I used ConstraintLayout here, so I can move it anywhere I like and since I have only one layout element in here -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_layout"
         android:layout_width="match_parent"
@@ -27,10 +29,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+            <LinearLayout
+                android:id="@+id/linear_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
         </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
