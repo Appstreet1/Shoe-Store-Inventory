@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import de.myprojects.shoestore.MainViewModel
 import de.myprojects.shoestore.R
 import de.myprojects.shoestore.databinding.FragmentHomeBinding
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
+    private lateinit var listAdapter: ShoeListAdapter
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -30,7 +33,7 @@ class HomeFragment : Fragment() {
 
         setHasOptionsMenu(true)
         observeShoes()
-
+        initRecyclerView()
 
         return binding.root
     }
@@ -39,22 +42,30 @@ class HomeFragment : Fragment() {
     private fun observeShoes() {
         viewModel.shoes.observe(viewLifecycleOwner, Observer { shoes ->
 
-            for (shoe in shoes) {
-                addEntry(shoe)
-            }
+            listAdapter.setData(shoes)
         })
     }
 
+    private fun initRecyclerView(){
+        listAdapter = ShoeListAdapter()
 
-    private fun addEntry(shoe: Shoe) {
-
-        val textView = TextView(this.context)
-        textView.text = shoe.getName()
-        textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-                .apply { setMargins(10, 100, 0, 0) }
-
-        binding.linearLayout.addView(textView)
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            itemAnimator = DefaultItemAnimator()
+            adapter = listAdapter
+        }
     }
+
+
+//    private fun addEntry(shoe: Shoe) {
+//
+//        val textView = TextView(this.context)
+//        textView.text = shoe.getName()
+//        textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+//                .apply { setMargins(10, 100, 0, 0) }
+//
+//        binding.linearLayout.addView(textView)
+//    }
 
     fun navigateDetail() {
         val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment()
