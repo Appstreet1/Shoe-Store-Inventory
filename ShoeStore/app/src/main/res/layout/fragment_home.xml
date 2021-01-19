@@ -16,6 +16,8 @@
         android:id="@+id/home_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#EFF2F7"
+        android:backgroundTint="#EFF2F7"
         tools:context=".home.HomeFragment">
 
         <ScrollView

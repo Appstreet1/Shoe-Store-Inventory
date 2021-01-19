@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import de.myprojects.shoestore.R
 import de.myprojects.shoestore.models.Shoe
+import kotlinx.android.synthetic.main.shoe_list_item.view.*
 
 class ShoeListAdapter(private val shoeList: ArrayList<Shoe> = ArrayList()
 ) : RecyclerView.Adapter<ShoeListAdapter.ShoeViewHolder>() {
@@ -26,6 +27,10 @@ class ShoeListAdapter(private val shoeList: ArrayList<Shoe> = ArrayList()
 
     class ShoeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun update(shoe: Shoe) = with(itemView) {
+
+            shoe_list_name.text = shoe._name
+            shoe_list_company.text = shoe._company
+            shoe_list_size.text = shoe._price
 
         }
     }

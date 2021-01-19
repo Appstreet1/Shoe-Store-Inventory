@@ -41,7 +41,6 @@ class HomeFragment : Fragment() {
 
     private fun observeShoes() {
         viewModel.shoes.observe(viewLifecycleOwner, Observer { shoes ->
-
             listAdapter.setData(shoes)
         })
     }
@@ -55,17 +54,6 @@ class HomeFragment : Fragment() {
             adapter = listAdapter
         }
     }
-
-
-//    private fun addEntry(shoe: Shoe) {
-//
-//        val textView = TextView(this.context)
-//        textView.text = shoe.getName()
-//        textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-//                .apply { setMargins(10, 100, 0, 0) }
-//
-//        binding.linearLayout.addView(textView)
-//    }
 
     fun navigateDetail() {
         val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment()

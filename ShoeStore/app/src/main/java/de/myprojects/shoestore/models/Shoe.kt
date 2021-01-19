@@ -6,7 +6,7 @@ import androidx.databinding.Observable
 
 data class Shoe(
     var _name: String = "Air Force",
-    var _size: String = "40",
+    var _price: String = "40$",
     var _company: String? = "NIKE",
     var _description: String? = "",
     val _images: List<String>? = mutableListOf()
@@ -23,11 +23,11 @@ data class Shoe(
 
     @Bindable
     fun getSize(): String {
-        return this._size
+        return this._price
     }
 
     fun setSize(size: String) {
-        _size = size
+        _price = size
     }
 
     @Bindable
