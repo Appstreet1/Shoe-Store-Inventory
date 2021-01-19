@@ -3,7 +3,8 @@
     <dimen name="small_margin">16dp</dimen>
     <dimen name="normal_text_size">18sp</dimen>
     <dimen name="title_text_size">36sp</dimen>
-    <dimen name="margin_medium">32dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
     <dimen name="font_size_big">30sp</dimen>
     <dimen name="smaller_margin">8dp</dimen>
     <dimen name="font_size_18dp">18sp</dimen>

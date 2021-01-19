@@ -42,7 +42,6 @@ class HomeFragment : Fragment() {
             for (shoe in shoes) {
                 addEntry(shoe)
             }
-
         })
     }
 

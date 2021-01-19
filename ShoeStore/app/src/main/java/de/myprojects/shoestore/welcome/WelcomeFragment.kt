@@ -26,6 +26,7 @@ class WelcomeFragment : Fragment() {
         return binding.root
     }
 
+
     //Binding
     fun navigateInstructions() {
         val action = WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment()
