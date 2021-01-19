@@ -41,7 +41,6 @@ class HomeFragment : Fragment() {
 
     private fun observeShoes() {
         viewModel.shoes.observe(viewLifecycleOwner, Observer { shoes ->
-
             listAdapter.setData(shoes)
         })
     }
