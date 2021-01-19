@@ -56,17 +56,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
-//    private fun addEntry(shoe: Shoe) {
-//
-//        val textView = TextView(this.context)
-//        textView.text = shoe.getName()
-//        textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-//                .apply { setMargins(10, 100, 0, 0) }
-//
-//        binding.linearLayout.addView(textView)
-//    }
-
     fun navigateDetail() {
         val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment()
         findNavController().navigate(action)
