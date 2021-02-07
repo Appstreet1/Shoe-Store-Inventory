@@ -73,6 +73,7 @@
         android:id="@+id/login_button"
         style="@style/button_long"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/bangers"
         android:onClick="@{() -> login.navigateWelcome()}"
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
